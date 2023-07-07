@@ -38,7 +38,7 @@ public class ConvertControllerTest {
     }
 
     /**
-     * isFinishnテスト
+     * isFinishテスト
      * 要素数 : 1, index : 到達
      */
     @Test

@@ -37,7 +37,7 @@ public class ConvertController {
     
     public boolean isFinish() {
         for(int i = 0 ; i < this.indexs.length ; i++) {
-            if(this.indexs[i] < this.argsItemList.get(i).size() -1) {
+            if(this.indexs[i] <= this.argsItemList.get(i).size() -1) {
                 return false;
             }
         }
