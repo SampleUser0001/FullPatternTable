@@ -4,7 +4,7 @@
   <groupId>ittimfn.tool.fullpatterntable</groupId>
   <artifactId>FullPatternTable</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <name>FullPatternTable</name>
   <url>http://maven.apache.org</url>
 
@@ -15,6 +15,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.mainClass>ittimfn.tool.fullpatterntable.App</project.mainClass>
     
+    <log4j2.version>2.20.0</log4j2.version>
     <junit.version>5.9.3</junit.version>
     <hamcrest.version>2.2</hamcrest.version>
   </properties>
@@ -26,6 +27,17 @@
       <artifactId>lombok</artifactId>
       <version>1.18.28</version>
       <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>${log4j2.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>${log4j2.version}</version>
     </dependency>
 
     <dependency>
@@ -73,6 +85,30 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>2.22.1</version>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.2.0</version>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+          <archive>
+            <manifest>
+              <mainClass>${project.mainClass}</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
       </plugin>
     </plugins>
   </build>  

@@ -1,15 +1,15 @@
 package ittimfn.tool.fullpatterntable;
 
-/**
- * Hello world!
- *
- */
+import java.io.IOException;
+
+import ittimfn.tool.fullpatterntable.controller.ConvertController;
+
 public class App {
-    private void exec(String[] args) {
-        
+    private void exec(String[] args) throws IOException {
+        new ConvertController(args).convert().forEach(System.out::println);
     }
     
-    public static void main( String[] args ) {
+    public static void main( String[] args ) throws IOException {
         new App().exec(args);
     }
 }
