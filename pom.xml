@@ -4,7 +4,7 @@
   <groupId>ittimfn.tool.fullpatterntable</groupId>
   <artifactId>FullPatternTable</artifactId>
   <packaging>jar</packaging>
-  <version>1.0</version>
+  <version>1.0.0-maintenance</version>
   <name>FullPatternTable</name>
   <url>http://maven.apache.org</url>
 
